@@ -582,6 +582,10 @@ async function codegen(options: Options & { target: string, output?: string, tes
   const { context, launchOptions, contextOptions } = await launchContext(options, {
     headless: !!process.env.PWTEST_CLI_HEADLESS,
     executablePath: process.env.PWTEST_CLI_EXECUTABLE_PATH,
+    args: [
+      '--remote-debugging-port=9222',
+      '--remote-allow-origins=*'
+    ],
     tracesDir,
   });
   dotenv.config({ path: 'playwright.env' });

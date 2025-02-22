@@ -70,7 +70,7 @@ export class ContextRecorder extends EventEmitter {
     // Make a copy of options to modify them later.
     const languageGeneratorOptions: LanguageGeneratorOptions = {
       browserName: context._browser.options.name,
-      launchOptions: { headless: false, ...params.launchOptions, tracesDir: undefined },
+      launchOptions: { headless: true, ...params.launchOptions, tracesDir: undefined },
       contextOptions: { ...params.contextOptions },
       deviceName: params.device,
       saveStorage: params.saveStorage,
